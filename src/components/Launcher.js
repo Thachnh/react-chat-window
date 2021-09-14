@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import ChatWindow from './ChatWindow';
+import WindowPlaceHolder from './WindowPlaceHolder';
 import launcherIcon from './../assets/logo-no-bg.svg';
 import incomingMessageSound from './../assets/sounds/notification.mp3';
 import launcherIconActive from './../assets/close-icon.png';
@@ -15,14 +15,7 @@ class Launcher extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.mute) { return; }
-    const nextMessage = nextProps.messageList[nextProps.messageList.length - 1];
-    const isIncoming = (nextMessage || {}).author === 'them';
-    const isNew = nextProps.messageList.length > this.props.messageList.length;
-    if (isIncoming && isNew) {
-      this.playIncomingMessageSound();
-    }
+  componentWillReceiveProps() {
   }
 
   playIncomingMessageSound() {
@@ -52,15 +45,13 @@ class Launcher extends Component {
           <img className={'sc-open-icon'} src={launcherIconActive} />
           <img className={'sc-closed-icon'} src={launcherIcon} />
         </div>
-        <ChatWindow
-          messageList={this.props.messageList}
-          onUserInputSubmit={this.props.onMessageWasSent}
-          onFilesSelected={this.props.onFilesSelected}
+        <WindowPlaceHolder
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
-          showEmoji={this.props.showEmoji}
-        />
+        >
+          {this.props.children}
+        </WindowPlaceHolder>
       </div>
     );
   }
@@ -77,11 +68,9 @@ const MessageCount = (props) => {
 
 Launcher.propTypes = {
   onMessageWasReceived: PropTypes.func,
-  onMessageWasSent: PropTypes.func,
   newMessagesCount: PropTypes.number,
   isOpen: PropTypes.bool,
   handleClick: PropTypes.func,
-  messageList: PropTypes.arrayOf(PropTypes.object),
   mute: PropTypes.bool,
   showEmoji: PropTypes.bool,
 };

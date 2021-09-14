@@ -17,7 +17,7 @@ class Demo extends Component {
     this.state = {
       messageList: messageHistory,
       newMessagesCount: 0,
-      isOpen: false
+      isOpen: true
     };
   }
 
@@ -69,17 +69,17 @@ class Demo extends Component {
       />
       <Launcher
         agentProfile={{
-          teamName: 'react-chat-window',
+          teamName: 'YO BIATCH',
+          desc: '#fskjsdlfje',
           imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
         }}
-        onMessageWasSent={this._onMessageWasSent.bind(this)}
-        onFilesSelected={this._onFilesSelected.bind(this)}
-        messageList={this.state.messageList}
-        newMessagesCount={this.state.newMessagesCount}
+        newMessagesCount={5}
         handleClick={this._handleClick.bind(this)}
         isOpen={this.state.isOpen}
-        showEmoji
-      />
+      >
+        <img className="demo-monster-img" src={monsterImgUrl} />
+        <div className="sc-user-input">Hello</div>
+      </Launcher>
       <img className="demo-monster-img" src={monsterImgUrl} />
       <Footer />
     </div>;
