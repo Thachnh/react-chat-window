@@ -69,9 +69,9 @@ class Demo extends Component {
       />
       <Launcher
         agentProfile={{
-          teamName: 'YO BIATCH',
-          desc: '#fskjsdlfje',
-          imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+          teamName: '#lobbyfklsdjlfkjsdlkfjlsdkfjldksjflksdjflkdsjflskdj',
+          desc: 'TMate Office workspace | TMate',
+          imageUrl: 'https://app.tmatehq.com/static/logo.png'
         }}
         newMessagesCount={5}
         handleClick={this._handleClick.bind(this)}

@@ -43,7 +43,7 @@ class Launcher extends Component {
         <div className={classList.join(' ')} onClick={this.handleClick.bind(this)}>
           <MessageCount count={this.props.newMessagesCount} isOpen={isOpen} />
           <img className={'sc-open-icon'} src={launcherIconActive} />
-          <img className={'sc-closed-icon'} src={launcherIcon} />
+          <img className={'sc-closed-icon'} src={this.props.agentProfile.imageUrl} />
         </div>
         <WindowPlaceHolder
           agentProfile={this.props.agentProfile}
