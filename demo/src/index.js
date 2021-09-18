@@ -77,7 +77,7 @@ class Demo extends Component {
         handleClick={this._handleClick.bind(this)}
         isOpen={this.state.isOpen}
       >
-        <img className="demo-monster-img" src={monsterImgUrl} />
+        <img src={monsterImgUrl} />
         <div className="sc-user-input">Hello</div>
       </Launcher>
       <img className="demo-monster-img" src={monsterImgUrl} />
