@@ -27,16 +27,16 @@
   width: 60px;
   height: 60px;
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  right: 25px;
+  bottom: 25px;
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
 }
 
 .sc-launcher .sc-closed-icon {
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
   padding: 14px;
-  width: 32px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
 }
 
 .sc-launcher .sc-open-icon {
