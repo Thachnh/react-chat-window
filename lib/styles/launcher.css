@@ -35,8 +35,8 @@
 .sc-launcher .sc-closed-icon {
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
   padding: 14px;
-  width: 60px;
-  height: 60px;
+  width: 32px;
+  height: 32px;
 }
 
 .sc-launcher .sc-open-icon {
